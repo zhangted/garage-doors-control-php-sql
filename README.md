@@ -1,2 +1,4 @@
 # garage-control-php-sql
-Garage door control using php, sql db, and raspberry pi
+
+Double garage door control using php, mysql, and raspberry pi
+  Mysql columns: usr, pw, leftaction, rightaction
