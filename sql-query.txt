@@ -5,6 +5,8 @@ CREATE TABLE `credentials`
 `usr` varchar(50) NOTNULL,
 `pw` varchar(255) NOTNULL,
 `leftaction` varchar(50) NOTNULL,
-`rightaction` varchar(50) NOTNULL
+`rightaction` varchar(50) NOTNULL,
+`leftdatetime` DATETIME,
+`rightdatetime` DATETIME
 PRIMARY KEY  ('id')
 )
