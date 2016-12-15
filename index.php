@@ -1,8 +1,9 @@
-<!DOCTYPE html>
 <?php
 session_start();
 include('connect.php');
 ?>
+
+<!DOCTYPE html>
 <html>
 <head>
 <title>Welcome</title>
