@@ -6,36 +6,7 @@ include('connect.php');
 <html>
 <head>
 <title>Welcome</title>
-<style>
-  body {
-    background: url("bg.jpg");
-    background-size: cover;
-    background-position center;
-    font-family: verdana;
-    text-align: center;
-  }
-  p {
-    color: white;
-    font-size: 22px;
-  }
-  h1 {
-    color: white;
-    font-size: 15px;
-  }
-  input[define="box"] {
-    padding: 5px;
-    border: 0;
-    color: brown;
-    background: beige;
-  }
-  input[type="submit"] {
-    padding: 10px;
-    font-size: 18px;
-    border: 0;
-    color: white;
-    background: brown;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 
 <body>
@@ -45,8 +16,8 @@ include('connect.php');
 
     echo('<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />');
     echo('<p>Access granted! Welcome, '.$_SESSION['usr'].'! </p><br /><br />
-          <h1>Left Door (Primary) Status : '.$_SESSION['lastActionLeftDoor'].'</h1><br />
-          <h1>Right Door (Secondary) Status: '.$_SESSION['lastActionRightDoor'].'</h1><br />
+          <h1><b>Left Door (Primary)</b> Status : <b>'.$_SESSION['lastActionLeftDoor'].'</b></h1><br />
+          <h1><b>Right Door (Secondary)</b> Status: <b>'.$_SESSION['lastActionRightDoor'].'</b></h1><br />
           ');
 
     //Left Door Button
@@ -55,7 +26,7 @@ include('connect.php');
     }
     else {
       echo('<form action='$_SERVER['PHP_SELF']' method='post'>
-            <input type='submit' placeholder='Left Door - Primary' define='box' name='left'>
+            <input type='submit' placeholder='Left Door - Primary' define='loggedin' name='left'>
             </form>');
     }
 
@@ -65,7 +36,7 @@ include('connect.php');
     }
     else {
       echo('<form action='$_SERVER['PHP_SELF']' method='post'>
-            <input type='submit' placeholder='Right Door - Secondary' define='box' name='right'>
+            <input type='submit' placeholder='Right Door - Secondary' define='loggedin' name='right'>
             </form><br />');
     }
 
@@ -75,7 +46,7 @@ include('connect.php');
     }
     else {
       echo('<form action='$_SERVER['PHP_SELF']' method='post'>
-            <input type='submit' placeholder='Log out' define='box' name='logout'>
+            <input type='submit' placeholder='Log out' define='login' name='logout'>
             </form>');
     }
     }
@@ -88,7 +59,7 @@ include('connect.php');
     <form action="check.php" method="post">
       <input type="username" define="box" placeholder="Username" name="usr"><br /><br />
       <input type="password" define="box" placeholder="Password" name="pw"><br /><br />
-      <input type="submit" name="login" placeholder="Login">
+      <input type="submit" define="login" name="login" placeholder="Login">
     </form>
 
     <?php

@@ -1,11 +1,10 @@
 <?php
-//Connect to database &
-//Functions sheet
+//Connect to database & Other functions sheet
 
 //Connect to DB
 session_start();
 $servername = "localhost";
-$username = "username";
+$username = "yqeoivwd";
 $password = "";
 
 $connect = new mysqli($servername, $username, $password);
@@ -49,8 +48,11 @@ function rightDoor_action($lastActionRightDoor){
 
 //Logout and Save
 function logout(){
-    //End session
-    //Store last action variables into sql again
+
+  //Store last action variables into sql again
+
+  session_destroy();
+
 }
 
 

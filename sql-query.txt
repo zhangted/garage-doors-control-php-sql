@@ -1,0 +1,10 @@
+
+CREATE TABLE `credentials`
+(
+`id` int(4) unsigned NOT NULL auto_increment,
+`usr` varchar(50) NOTNULL,
+`pw` varchar(255) NOTNULL,
+`leftaction` varchar(50) NOTNULL,
+`rightaction` varchar(50) NOTNULL
+PRIMARY KEY  ('id')
+)

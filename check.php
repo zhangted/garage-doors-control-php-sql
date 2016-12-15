@@ -1,5 +1,6 @@
 <?php
-//Form Action for Logging In
+//What happens after user presses login button
+
 session_start();
 include('connect.php');
 
@@ -7,7 +8,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
   if(!empty($_POST['usr']) && !empty($_POST['pw'])) {
 
-    $hash = password_hash($_POST['pw'], PASSWORD_DEFAULT);
+    $pw = htmlspecialchars($_POST['pw']);
+    $hash = password_hash($pw, PASSWORD_DEFAULT);
     $usr = mysqli_real_escape_string($connect, $_POST['usr']);
 
     $sql = "SELECT usr,pw,leftaction,rightaction FROM credentials WHERE usr = '$usr'";
